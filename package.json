@@ -1,0 +1,22 @@
+{
+  "name": "taskmaster",
+  "version": "1.0.0",
+  "description": "TaskManager API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagnergabe/Task-Manager-API.git"
+  },
+  "author": "Gabriel Wagner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wagnergabe/Task-Manager-API/issues"
+  },
+  "homepage": "https://github.com/wagnergabe/Task-Manager-API#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
