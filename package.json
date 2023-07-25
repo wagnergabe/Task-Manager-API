@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wagnergabe/Task-Manager-API#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongoose": "^5.11.10",
     "nodemon": "^3.0.1"
