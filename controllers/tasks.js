@@ -8,6 +8,7 @@ const getAllTasks = async (req, res) => {
         res.status(500).json({ msg: "Could Not Find Task" })
     }
 };
+
 const createTasks = async (req, res) => {
   try {
     const task = await Task.create(req.body);
@@ -16,9 +17,20 @@ const createTasks = async (req, res) => {
     res.status(500).json({ error });
   }
 };
-const getTasks = (req, res) => {
-  res.json({ id: req.params.id });
+
+const getTask = async (req, res) => {
+    try {
+        const { id:taskID } = req.params 
+        const task = await Task.findOne({ _id:taskID })
+        if(!task) {
+            return res.status(404).json({msg: `No task with id : ${taskID}`})
+        }
+        res.status(200).json({ task })
+    } catch(error) {
+        res.status(500).json({ msg: "Could Not Find Task"})
+    }
 };
+
 const updateTasks = (req, res) => {
   res.send("update task");
 };
@@ -29,7 +41,7 @@ const deleteTasks = (req, res) => {
 module.exports = {
   getAllTasks,
   createTasks,
-  getTasks,
+  getTask,
   updateTasks,
   deleteTasks,
 };
